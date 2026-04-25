@@ -1,12 +1,12 @@
-# service-lasso-app-packager-pkg
+# service-lasso-app-packager-sea
 
-Template repo for a `pkg`-wrapped Node Service Lasso app host.
+Template repo for a Node SEA-wrapped Service Lasso app host.
 
 Package identity:
-- `@service-lasso/service-lasso-app-packager-pkg`
+- `@service-lasso/service-lasso-app-packager-sea`
 
 Purpose:
-- show how to take the canonical `service-lasso-app-node` host shape and release it behind a `pkg` launcher
+- show how to take the canonical `service-lasso-app-node` host shape and release it behind a Node SEA launcher
 - act as a quick-start template for downstream teams that want an executable wrapper around the Node host
 - stay close to real runtime behavior while keeping packaging concerns outside the core repo
 
@@ -16,7 +16,7 @@ Expected runtime model:
 
 Current implementation:
 - plain Node host payload under `src/index.js`
-- `pkg` launcher wrapper under `src/pkg-launcher.cjs`
+- Node SEA launcher wrapper under `src/sea-launcher.cjs`
 - published `@service-lasso/service-lasso` runtime package consumption
 - host-owned shell at `/`
 - mounted sibling `lasso-@serviceadmin` build at `/admin/`
@@ -29,14 +29,14 @@ Current local start command:
 
 Current local build and verify commands:
 - `npm test`
-- `npm run package:pkg`
+- `npm run package:sea`
 - `npm run release:artifact`
 - `npm run release:verify`
 
 Current local URLs:
-- host shell: `http://127.0.0.1:19030`
-- admin UI: `http://127.0.0.1:19030/admin/`
-- runtime API: `http://127.0.0.1:18083`
+- host shell: `http://127.0.0.1:19040`
+- admin UI: `http://127.0.0.1:19040/admin/`
+- runtime API: `http://127.0.0.1:18084`
 
 ## How To Use This Starter
 
@@ -49,9 +49,9 @@ The release outputs are:
 - `source`
   - template/source starter for customization
 - `runtime`
-  - runnable bootstrap-download bundle with a `pkg` launcher wrapper
+  - runnable bootstrap-download bundle with a Node SEA launcher wrapper
 - `bundled`
-  - runnable no-download bundle with a `pkg` launcher wrapper and acquired service archives under `services/`
+  - runnable no-download bundle with a Node SEA launcher wrapper and acquired service archives under `services/`
 
 Release versions from `main` follow the protected-branch pattern:
 - `yyyy.m.d-<shortsha>`
