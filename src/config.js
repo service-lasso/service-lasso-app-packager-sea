@@ -57,7 +57,7 @@ export function resolveAppPackagerSeaConfig(options = {}) {
 
 export async function validateAppPackagerSeaConfig(config) {
   await access(path.join(config.sourceServicesRoot, "echo-service", "service.json"));
-  await access(path.join(config.sourceServicesRoot, "service-admin", "service.json"));
+  await access(path.join(config.sourceServicesRoot, "@serviceadmin", "service.json"));
   await access(path.join(config.adminDistRoot, "index.html"));
   return config;
 }
